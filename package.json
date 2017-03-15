@@ -1,0 +1,21 @@
+{
+  "name": "blog",
+  "description": "My's Blog",
+  "version": "0.1.0",
+  "author": "greclear",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/greclear/blog"
+  },
+  "homepage": "",
+  "keywords": [
+    "react",
+    "isomorphic",
+    "universal",
+    "webpack",
+    "redux",
+    "babel",
+    "blog"
+  ]
+}
