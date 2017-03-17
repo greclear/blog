@@ -1,7 +1,7 @@
 # Blog
 
 ### 前言
- 
+
 
 后端：node + express + co + mongoose + ...  
 前端：react + redux + react-router + react-redux + ...  
@@ -58,4 +58,4 @@ blog前后端代码彻底分离fe/be，后端基于express + co + mongoose，前
 5.单页面   
 6.标签云  
 7.友情链接
-8.后台管理等。。。
+8.后台管理等
