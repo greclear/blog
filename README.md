@@ -50,12 +50,11 @@
 blog前后端代码彻底分离fe/be，后端基于express + co + mongoose，前端基于react + redux + react-router，前后端同构
 服务一分为2（apiServer + renderServer），对renderServer实现前后端同构，首次加载走服务端，脚本加载后走客户端。
 
-实现基本功能有:
+**实现基本功能有:**
 1.文章发布  
 2.文章分类自定义  
 3.文章搜索  
 4.文章留言  
 5.单页面   
 6.标签云  
-7.友情链接
-8.后台管理等
+7.友情链接和后台管理等
