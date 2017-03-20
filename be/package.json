@@ -1,7 +1,7 @@
 {
   "name": "blog-be",
   "scripts": {
-    "start": "bin/server.js",
+    "start": "bin/server.js"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
