@@ -52,7 +52,7 @@ proxy.on('error', (error, req, res) => {
 });
 
 app.get('*', function (req, res) {
-    res.sendFile( path.resolve(__dirname , '../resource/index.html') );
+    res.sendFile( path.resolve(__dirname , '../resource/indexDev.html') );
     //res.sendFile('/Users/huangweicong/test/blog/fe/resource/dist/main-5e07d1b17e1a015d06e1.js');
 })
 

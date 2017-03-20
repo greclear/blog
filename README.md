@@ -21,12 +21,16 @@
     npm run build.dev // 打包客户端JS
     npm start  // 启动
 
+    //单纯的前端开发，启用热加载和redux-devtools
+    npm run watch //启动
+
 ### 说明
 
 1.访问地址
 
     http://localhost:3004  // 前台地址
     http://localhost:3004/admin  // 后台地址(初始账号: admin@blog.com , 密码: admin )
+    http://localhost:3005  // 单纯前端热加载地址
 
 2.几个config文件
 
