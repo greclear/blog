@@ -7,6 +7,7 @@
 前端：react + redux + react-router + react-redux + ...  
 
 ### 准备
+
 1.安装 nodejs(>=4) 和 mongodb(且启动)
 2.window用户需要先安装ruby环境，再安装sass，如果需要安装node-sass，因为需要node-gyp编译，所以还需要安装python环境
 
