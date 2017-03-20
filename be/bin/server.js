@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+//#!/usr/bin/env node
 if (process.env.NODE_ENV !== 'production') {
   if (!require('piping')({
       hook: true,
