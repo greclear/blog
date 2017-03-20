@@ -84,8 +84,7 @@ export default class Layout extends Component {
               <section>
                 <h3>Blog App</h3>
                 <ul>
-                  <li><a href="https://pan.baidu.com/s/1kUIUQ3P" title="Blog App - ios版" target="_blank">ios版</a></li>
-                  <li><a href="https://pan.baidu.com/s/1nv2RYa9" title="Blog App - android版" target="_blank">android版</a></li>
+                  <li>待开发</li>
                 </ul>
               </section>
               <section ref="colors">
