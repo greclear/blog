@@ -1,5 +1,5 @@
 {
-  "name": "blog-fe2",
+  "name": "blog-fe",
   "scripts": {
     "start": "node bin/server.js",
     "watch": "node ./build/webpack.dev.server",
