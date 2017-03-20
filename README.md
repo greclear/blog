@@ -9,7 +9,7 @@
 ### 准备
 
 安装 nodejs(>=4) 和 mongodb(且启动)
-
+window用户需要先安装ruby环境，再安装sass，如果需要安装node-sass，因为需要node-gyp编译，所以还需要安装python环境
 ### 运行
 
     git clone https://github.com/greclear/blog.git  // 仓库
@@ -24,6 +24,8 @@
     //单纯的前端开发，启用热加载和redux-devtools
     npm run watch //启动
 
+![](screenshot_01.png)
+![](screenshot_02.png)
 ### 说明
 
 1.访问地址
