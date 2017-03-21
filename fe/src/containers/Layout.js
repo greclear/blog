@@ -66,7 +66,7 @@ export default class Layout extends Component {
                 {articleTypes.map((v, i) => {
                   return <Link key={i} to='/' query={{typePath: v.path}}>{v.name}</Link>
                 })}
-                <Link to='/singlePage' query={{path: 'api'}}>API</Link>
+                <Link to='/singlePage' query={{path: 'example'}}>例子</Link>
                 <Link to='/singlePage' query={{path: 'about'}}>关于</Link>
               </nav>
             </div>
