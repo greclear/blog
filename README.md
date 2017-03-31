@@ -57,6 +57,10 @@
 
 ### 更新日志
 
+**0.1.1（2017-03-31）**
+
+添加了基于react的移动端手势库例子和剪切图片例子，源码在fe/resource/example下
+
 **0.1.0（2017-03-15）**  
 
 blog前后端代码彻底分离fe/be，后端基于express + co + mongoose，前端基于react + redux + react-router，前后端同构

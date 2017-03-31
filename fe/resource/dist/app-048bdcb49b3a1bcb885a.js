@@ -89,7 +89,7 @@ webpackJsonp([1],[
 	    )
 	  ), dest);
 	
-	  //配置热加载的入口文件，等文件改变后应该干什么
+	  //配置热加载的入口文件，等文件改变后应该怎样重新渲染
 	  // if (module.hot) {
 	  //     module.hot.accept('./routes', () => {
 	  //           const getRoutes = require('./routes');
@@ -5876,8 +5876,8 @@ webpackJsonp([1],[
 	                }),
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: '/singlePage', query: { path: 'api' } },
-	                  'API'
+	                  { to: '/singlePage', query: { path: 'example' } },
+	                  '\u4F8B\u5B50'
 	                ),
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
@@ -5927,20 +5927,7 @@ webpackJsonp([1],[
 	                  _react2.default.createElement(
 	                    'li',
 	                    null,
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: 'https://pan.baidu.com/s/1kUIUQ3P', title: 'Blog App - ios\u7248', target: '_blank' },
-	                      'ios\u7248'
-	                    )
-	                  ),
-	                  _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                      'a',
-	                      { href: 'https://pan.baidu.com/s/1nv2RYa9', title: 'Blog App - android\u7248', target: '_blank' },
-	                      'android\u7248'
-	                    )
+	                    '\u5F85\u5F00\u53D1'
 	                  )
 	                )
 	              ),
@@ -16319,4 +16306,4 @@ webpackJsonp([1],[
 
 /***/ }
 ]);
-//# sourceMappingURL=app-0cb7986980df478f7324.js.map
+//# sourceMappingURL=app-048bdcb49b3a1bcb885a.js.map

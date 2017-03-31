@@ -1,0 +1,22 @@
+# 包
+/be/node_modules
+/fe/node_modules
+
+
+# mac cache
+.DS_Store
+
+# npm
+npm-debug.log
+
+# map
+*.map
+
+
+# log
+/be/log
+/fe/log
+
+# 测试文件
+/fe/test.js
+/fe/test1.js

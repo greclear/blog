@@ -4,7 +4,8 @@
     "start": "node bin/server.js",
     "watch": "node ./build/webpack.dev.server",
     "build.dev": "webpack --verbose --colors --display-error-details --config ./build/webpack.config.dev",
-    "build.prod": "webpack --verbose --colors --display-error-details --config ./build/webpack.config.prod"
+    "build.prod": "webpack --verbose --colors --display-error-details --config ./build/webpack.config.prod",
+    "compileComponent": "webpack --verbose --colors --display-error-details --config ./build/webpack.dev.components"
   },
   "dependencies": {
     "classnames": "^2.2.5",
