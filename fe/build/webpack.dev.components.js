@@ -10,8 +10,9 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, '../resource/example/componentsDist'),
-    // filename: 'finger.js',
-    filename: 'crop.js',
+    //filename: 'finger.js',
+    //filename: 'crop.js',
+    filename: 'imageView.js',
     publicPath: '/componentsDist/'
   },
   module: {

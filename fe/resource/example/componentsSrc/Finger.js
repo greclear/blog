@@ -11,8 +11,11 @@ export default class Finger extends React.Component {
         this.delta = null;//最近两次触发touchstart事件的时间间隔
         this.last = null;//上次触发touchstart事件时的毫秒数
         this.now = null;//当前触发touchstart事件时的毫秒数
+        this.end = null;
+        this.multiTouch = false;
         this.tapTimeout = null;//保存了setTimeout的返回值，当最后不是tap事件时，用于清除tap的定时器
         this.longTapTimeout = null;//保存了setTimeout的返回值，当最后不是longTap事件时，用于清除longTap的定时器
+        this.singleTapTimeout = null;// 与tap事件的区别是tap是立即执行的，singleTap是跟doubleTap一起的，会延迟一点时间再执行，以判断是哪个事件
         this.swipeTimeout=null;//保存了setTimeout的返回值，当最后不是swipe事件时，用于清除swipe的定时器
         //x1,y1是当前触发touchstart事件时，pageX和pageY的位置，x2，y2记录上一次手指的位置
         this.x1 = this.x2 = this.y1 = this.y2 = null;
@@ -62,13 +65,16 @@ export default class Finger extends React.Component {
     }
 
     //触发事件
-    _emitEvent(name, e) {
-        if (this.props[name]) {
-            this.props[name](e);
-        }
-    }
+    _emitEvent(name, ...arg) {
+         if (this.props[name]) {
+             this.props[name](...arg);
+         }
+     }
 
     _handleTouchStart (evt) {
+
+       evt.persist();
+       if(!evt.touches) return;
 
        evt.preventDefault();//是否应该在一开始就阻止浏览器默认事件呢
 
@@ -85,6 +91,8 @@ export default class Finger extends React.Component {
        var preV = this.preV,
            len = evt.touches.length;
        if (len > 1) {
+           this._cancelLongTap();
+           this._cancelSingleTap();
            var v = { x: evt.touches[1].pageX - this.x1, y: evt.touches[1].pageY - this.y1 };
            preV.x = v.x;
            preV.y = v.y;
@@ -97,6 +105,8 @@ export default class Finger extends React.Component {
     }
 
     _handleTouchMove(evt){
+        evt.persist();
+
         var preV = this.preV,
                     len = evt.touches.length,
                     currentX = evt.touches[0].pageX,
@@ -107,6 +117,10 @@ export default class Finger extends React.Component {
 
             if (preV.x !== null) {
                 if (this.pinchStartLen > 0) {
+                   evt.center = {
+                        x: (evt.touches[1].pageX + currentX) / 2,
+                        y: (evt.touches[1].pageY + currentY) / 2
+                    };
                     evt.scale = this.getLen(v) / this.pinchStartLen;
                     this._emitEvent('onPinch', evt);
                 }
@@ -116,6 +130,7 @@ export default class Finger extends React.Component {
             }
             preV.x = v.x;
             preV.y = v.y;
+            this.multiTouch = true;
         } else {
             if (this.x2 !== null) {
                 evt.deltaX = currentX - this.x2;
@@ -137,49 +152,71 @@ export default class Finger extends React.Component {
 
     //别有疑问，clearInterval和clearTimeout效果都是一样的，没有什么区别
     _handleTouchCancel(){
+        clearInterval(this.singleTapTimeout);
         clearInterval(this.tapTimeout);
         clearInterval(this.longTapTimeout);
         clearInterval(this.swipeTimeout);
     }
 
     _handleTouchEnd(evt){
-        this._cancelLongTap();
-        var self = this;
-        if( evt.touches.length<2){
-            this._emitEvent('onMultipointEnd', evt);
-        }
 
-        if ((this.x2 && Math.abs(this.x1 - this.x2) > 30) ||
-            (this.y2 && Math.abs(this.preV.y - this.y2) > 30)) {
-            evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
-            this.swipeTimeout = setTimeout(function () {
-                self._emitEvent('onSwipe', evt);
-            }, 0)
-        } else {
-            this.tapTimeout = setTimeout(function () {
-                self._emitEvent('onTap', evt);
-                if (self.isDoubleTap) {
-                    self._emitEvent('onDoubleTap', evt);
-                    self.isDoubleTap = false;
-                }
-            }, 0)
-        }
+      evt.persist();
+      this.end = Date.now();
+      this._cancelLongTap();
 
-        this.preV.x = 0;
-        this.preV.y = 0;
-        this.scale = 1;
-        this.pinchStartLen = null;
-        this.x1 = this.x2 = this.y1 = this.y2 = null;
-    }
+      if( evt.touches.length<2){
+          this._emitEvent('onMultipointEnd', evt);
+      }
+
+      evt.origin = [this.x1, this.y1];
+      if(this.multiTouch === false){
+          if ((this.x2 && Math.abs(this.x1 - this.x2) > 30) ||
+              (this.y2 && Math.abs(this.preV.y - this.y2) > 30)) {
+              evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
+              evt.distance = Math.abs(this.x1 - this.x2);
+              this.swipeTimeout = setTimeout(() => {
+                  this._emitEvent('onSwipe', evt);
+              }, 0)
+          } else {
+              this.tapTimeout = setTimeout(() => {
+                  this._emitEvent('onTap', evt);
+                  if (this.isDoubleTap) {
+                      this._emitEvent('onDoubleTap', evt);
+                      clearTimeout(this.singleTapTimeout);
+                      this.isDoubleTap = false;
+                  } else {
+                      this.singleTapTimeout = setTimeout(()=>{
+                          this._emitEvent('onSingleTap', evt);
+                      }, 250);
+                  }
+              }, 0)
+          }
+      }
+
+      this.preV.x = 0;
+      this.preV.y = 0;
+      this.scale = 1;
+      this.pinchStartLen = null;
+      this.x1 = this.x2 = this.y1 = this.y2 = null;
+      this.multiTouch = false;
+  }
 
     //取消绑定的长按事件
     _cancelLongTap () {
         clearTimeout(this.longTapTimeout);
     }
 
+    _cancelSingleTap () {
+        clearTimeout(this.singleTapTimeout);
+    }
     //滑动方向
     _swipeDirection (x1, x2, y1, y2) {
-        return Math.abs(x1 - x2) >= Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
+        if(Math.abs(x1 - x2) > 80 || this.end-this.now < 250){
+            return Math.abs(x1 - x2) >= Math.abs(y1 - y2) ? (x1 - x2 > 0 ? 'Left' : 'Right') : (y1 - y2 > 0 ? 'Up' : 'Down')
+        }else {
+            return 'Nochange'
+        }
+
     }
 
     render() {
@@ -205,6 +242,7 @@ export default class Finger extends React.Component {
 //             onRotate={this.onRotate.bind(this)}
 //             onPressMove={this.onPressMove.bind(this)}
 //             onMultipointEnd={this.onMultipointEnd.bind(this)}
+//             onSingleTap={this.onSingleTap.bind(this)}
 //             onDoubleTap={this.onDoubleTap.bind(this)}>
 //             <div className="test">the element that you want to bind event</div>
 //         </Finger>

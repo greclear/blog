@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "74f2773e512a61957520"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f7708a0844d384207542"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30003,7 +30003,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	exports.default = undefined;
 
@@ -30031,308 +30031,175 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Finger = __webpack_require__(562);
-
-	var _Finger2 = _interopRequireDefault(_Finger);
-
-	var _Transform = __webpack_require__(563);
-
-	var _Transform2 = _interopRequireDefault(_Transform);
+	var _ImageViewer = __webpack_require__(562);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var Finger = function (_React$Component) {
-	  (0, _inherits3.default)(Finger, _React$Component);
+	// import React from 'react';
+	// import FingerComponent from '../resource/example/componentsSrc/Finger';
+	// import Transform from '../resource/example/componentsSrc/Transform';
+	//
+	// export default class Finger extends React.Component{
+	//
+	//   state = {
+	//     tap: false,
+	//     longTap:false,
+	//     doubleTap:1,
+	//
+	//     pressMoveX:0,
+	//     pressMoveY:0,
+	//
+	//     scaleX:1,
+	//     scaleY:1,
+	//     initScale:1,
+	//
+	//     rotateZ:0,
+	//
+	//     swipe:0,
+	//     currentIndex:0,
+	//
+	//   }
+	//
+	//   onTap(){
+	//     this.setState({
+	//       tap : !this.state.tap
+	//     });
+	//   }
+	//
+	//   onLongTap(){
+	//     this.setState({
+	//       longTap: !this.state.longTap
+	//     })
+	//   }
+	//
+	//   onDoubleTap(){
+	//     this.setState({
+	//       doubleTap: this.state.doubleTap == 1 ? 2 : 1
+	//     })
+	//   }
+	//
+	//   onPressMove(evt){
+	//     this.setState({
+	//       pressMoveX:this.state.pressMoveX + evt.deltaX,
+	//       pressMoveY:this.state.pressMoveY + evt.deltaY,
+	//     });
+	//   }
+	//
+	//   onPinch(evt){
+	//     this.setState({
+	//       scaleX:  this.state.initScale * evt.scale,
+	//       scaleY: this.state.scaleX,
+	//     })
+	//   }
+	//
+	//   onMultipointStart(){
+	//     this.state.initScale = this.state.scaleX;
+	//   }
+	//
+	//   onRotate(evt){
+	//     this.setState({
+	//       rotateZ:  this.state.rotateZ + evt.angle,
+	//     })
+	//   }
+	//
+	//   onSwipe(evt){
+	//     if(evt.direction === 'Left'){
+	//       if(this.state.currentIndex < 2){
+	//         this.state.currentIndex++;
+	//         this.setState({
+	//           swipe: -160 * this.state.currentIndex
+	//         })
+	//       }
+	//     }else if (evt.direction === 'Right') {
+	//       if(this.state.currentIndex > 0){
+	//         this.state.currentIndex--;
+	//         this.setState({
+	//           swipe: -160 * this.state.currentIndex
+	//         })
+	//       }
+	//     }
+	//   }
+	//
+	//   render() {
+	//       return (
+	//         <div>
+	//
+	//           <FingerComponent  onTap={ () => this.onTap()}>
+	//               <div  className='tap'>
+	//                 <img src='/static/images/WeChat.jpg' />
+	//                 <div className="overlay"  style={{display: this.state.tap ? 'block':'none'}}>
+	//                     <img src="/static/images/yes.png" />
+	//                 </div>
+	//               </div>
+	//           </FingerComponent>
+	//           <div className='titleTip'>tap</div>
+	//
+	//           <FingerComponent  onLongTap={ () => this.onLongTap()}>
+	//               <div  className='tap'>
+	//                 <img src='/static/images/WeChat.jpg' />
+	//                 <div className="overlay"  style={{display: this.state.longTap ? 'block':'none'}}>
+	//                     <img src="/static/images/yes.png" />
+	//                 </div>
+	//               </div>
+	//           </FingerComponent>
+	//           <div className='titleTip'>longTap</div>
+	//
+	//           <FingerComponent  onDoubleTap={ () => this.onDoubleTap()}>
+	//               <Transform scaleX={this.state.doubleTap} scaleY={this.state.doubleTap} className='tap' style={{transition:'.5s'}}>
+	//                 <div><img src='/static/images/WeChat.jpg' /></div>
+	//               </Transform>
+	//           </FingerComponent>
+	//           <div className='titleTip'>doubleTap</div>
+	//
+	//           <FingerComponent  onPressMove={ (evt) => this.onPressMove(evt)}>
+	//               <Transform translateX={this.state.pressMoveX} translateY={this.state.pressMoveY} className='tap'>
+	//                 <div><img src='/static/images/WeChat.jpg' /></div>
+	//               </Transform>
+	//           </FingerComponent>
+	//           <div className='titleTip'>pressMove</div>
+	//
+	//           <FingerComponent  onPinch={ (evt) => this.onPinch(evt)} onMultipointStart={ () => this.onMultipointStart()}>
+	//               <Transform scaleX={this.state.scaleX} scaleY={this.state.scaleY} className='tap'>
+	//                 <div><img src='/static/images/WeChat.jpg' /></div>
+	//               </Transform>
+	//           </FingerComponent>
+	//           <div className='titleTip'>pinch</div>
+	//
+	//           <FingerComponent  onRotate={ (evt) => this.onRotate(evt)} >
+	//               <Transform rotateZ={this.state.rotateZ} className='tap'>
+	//                 <div><img src='/static/images/WeChat.jpg' /></div>
+	//               </Transform>
+	//           </FingerComponent>
+	//           <div className='titleTip'>rotate</div>
+	//
+	//           <FingerComponent  onRotate={ (evt) => this.onRotate(evt)} onMultipointStart={ () => this.onMultipointStart()} onPinch={ (evt) => this.onPinch(evt)}>
+	//               <Transform scaleX={this.state.scaleX} scaleY={this.state.scaleY} rotateZ={this.state.rotateZ} className='tap'>
+	//                 <div><img src='/static/images/WeChat.jpg' /></div>
+	//               </Transform>
+	//           </FingerComponent>
+	//           <div className='titleTip'>pinchRotate</div>
+	//
+	//           <FingerComponent  onSwipe={ (evt) => this.onSwipe(evt)} >
+	//             <div className='swipeBox'>
+	//               <Transform translateX={this.state.swipe} className='scroll' style={{transition:'.5s ease'}}>
+	//                 <img src='/static/images/WeChat.jpg' />
+	//                 <img src='/static/images/WeChat.jpg' />
+	//                 <img src='/static/images/WeChat.jpg' />
+	//               </Transform>
+	//               <div className="nuclear-nav">
+	//                   <a className={ this.state.currentIndex === 0 ? 'active' : ''}></a>
+	//                   <a className={ this.state.currentIndex === 1 ? 'active' : ''}></a>
+	//                   <a className={ this.state.currentIndex === 2 ? 'active' : ''}></a>
+	//               </div>
+	//             </div>
+	//           </FingerComponent>
+	//           <div className='titleTip'>swipe</div>
+	//         </div>
+	//       );
+	//   }
+	//
+	// }
 
-	  function Finger() {
-	    var _ref;
-
-	    var _temp, _this, _ret;
-
-	    (0, _classCallCheck3.default)(this, Finger);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Finger.__proto__ || (0, _getPrototypeOf2.default)(Finger)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-	      tap: false,
-	      longTap: false,
-	      doubleTap: 1,
-
-	      pressMoveX: 0,
-	      pressMoveY: 0,
-
-	      scaleX: 1,
-	      scaleY: 1,
-	      initScale: 1,
-
-	      rotateZ: 0,
-
-	      swipe: 0,
-	      currentIndex: 0
-
-	    }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
-	  }
-
-	  (0, _createClass3.default)(Finger, [{
-	    key: 'onTap',
-	    value: function onTap() {
-	      this.setState({
-	        tap: !this.state.tap
-	      });
-	    }
-	  }, {
-	    key: 'onLongTap',
-	    value: function onLongTap() {
-	      this.setState({
-	        longTap: !this.state.longTap
-	      });
-	    }
-	  }, {
-	    key: 'onDoubleTap',
-	    value: function onDoubleTap() {
-	      this.setState({
-	        doubleTap: this.state.doubleTap == 1 ? 2 : 1
-	      });
-	    }
-	  }, {
-	    key: 'onPressMove',
-	    value: function onPressMove(evt) {
-	      this.setState({
-	        pressMoveX: this.state.pressMoveX + evt.deltaX,
-	        pressMoveY: this.state.pressMoveY + evt.deltaY
-	      });
-	    }
-	  }, {
-	    key: 'onPinch',
-	    value: function onPinch(evt) {
-	      this.setState({
-	        scaleX: this.state.initScale * evt.scale,
-	        scaleY: this.state.scaleX
-	      });
-	    }
-	  }, {
-	    key: 'onMultipointStart',
-	    value: function onMultipointStart() {
-	      this.state.initScale = this.state.scaleX;
-	    }
-	  }, {
-	    key: 'onRotate',
-	    value: function onRotate(evt) {
-	      this.setState({
-	        rotateZ: this.state.rotateZ + evt.angle
-	      });
-	    }
-	  }, {
-	    key: 'onSwipe',
-	    value: function onSwipe(evt) {
-	      if (evt.direction === 'Left') {
-	        if (this.state.currentIndex < 2) {
-	          this.state.currentIndex++;
-	          this.setState({
-	            swipe: -160 * this.state.currentIndex
-	          });
-	        }
-	      } else if (evt.direction === 'Right') {
-	        if (this.state.currentIndex > 0) {
-	          this.state.currentIndex--;
-	          this.setState({
-	            swipe: -160 * this.state.currentIndex
-	          });
-	        }
-	      }
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onTap: function onTap() {
-	              return _this2.onTap();
-	            } },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'tap' },
-	            _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' }),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'overlay', style: { display: this.state.tap ? 'block' : 'none' } },
-	              _react2.default.createElement('img', { src: '/static/images/yes.png' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'tap'
-	        ),
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onLongTap: function onLongTap() {
-	              return _this2.onLongTap();
-	            } },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'tap' },
-	            _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' }),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'overlay', style: { display: this.state.longTap ? 'block' : 'none' } },
-	              _react2.default.createElement('img', { src: '/static/images/yes.png' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'longTap'
-	        ),
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onDoubleTap: function onDoubleTap() {
-	              return _this2.onDoubleTap();
-	            } },
-	          _react2.default.createElement(
-	            _Transform2.default,
-	            { scaleX: this.state.doubleTap, scaleY: this.state.doubleTap, className: 'tap', style: { transition: '.5s' } },
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'doubleTap'
-	        ),
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onPressMove: function onPressMove(evt) {
-	              return _this2.onPressMove(evt);
-	            } },
-	          _react2.default.createElement(
-	            _Transform2.default,
-	            { translateX: this.state.pressMoveX, translateY: this.state.pressMoveY, className: 'tap' },
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'pressMove'
-	        ),
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onPinch: function onPinch(evt) {
-	              return _this2.onPinch(evt);
-	            }, onMultipointStart: function onMultipointStart() {
-	              return _this2.onMultipointStart();
-	            } },
-	          _react2.default.createElement(
-	            _Transform2.default,
-	            { scaleX: this.state.scaleX, scaleY: this.state.scaleY, className: 'tap' },
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'pinch'
-	        ),
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onRotate: function onRotate(evt) {
-	              return _this2.onRotate(evt);
-	            } },
-	          _react2.default.createElement(
-	            _Transform2.default,
-	            { rotateZ: this.state.rotateZ, className: 'tap' },
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'rotate'
-	        ),
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onRotate: function onRotate(evt) {
-	              return _this2.onRotate(evt);
-	            }, onMultipointStart: function onMultipointStart() {
-	              return _this2.onMultipointStart();
-	            }, onPinch: function onPinch(evt) {
-	              return _this2.onPinch(evt);
-	            } },
-	          _react2.default.createElement(
-	            _Transform2.default,
-	            { scaleX: this.state.scaleX, scaleY: this.state.scaleY, rotateZ: this.state.rotateZ, className: 'tap' },
-	            _react2.default.createElement(
-	              'div',
-	              null,
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'pinchRotate'
-	        ),
-	        _react2.default.createElement(
-	          _Finger2.default,
-	          { onSwipe: function onSwipe(evt) {
-	              return _this2.onSwipe(evt);
-	            } },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'swipeBox' },
-	            _react2.default.createElement(
-	              _Transform2.default,
-	              { translateX: this.state.swipe, className: 'scroll', style: { transition: '.5s ease' } },
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' }),
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' }),
-	              _react2.default.createElement('img', { src: '/static/images/WeChat.jpg' })
-	            ),
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'nuclear-nav' },
-	              _react2.default.createElement('a', { className: this.state.currentIndex === 0 ? 'active' : '' }),
-	              _react2.default.createElement('a', { className: this.state.currentIndex === 1 ? 'active' : '' }),
-	              _react2.default.createElement('a', { className: this.state.currentIndex === 2 ? 'active' : '' })
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'titleTip' },
-	          'swipe'
-	        )
-	      );
-	    }
-	  }]);
-	  return Finger;
-	}(_react2.default.Component);
 
 	// import React from 'react';
 	// import Crop from '../resource/example/componentsSrc/Crop';
@@ -30355,71 +30222,78 @@
 	// }
 
 
-	// import React from 'react';
-	// import { SingleImgView } from '../resource/example/componentsSrc/ImageViewer';
-	//
-	// export default class ImageViewerComponent extends React.Component {
-	//     constructor(){
-	//         super();
-	//     }
-	//
-	//     render() {
-	//         let imagelist = [
-	//             'https://p.qpic.cn/qqconadmin/0/e4a67754b2d1485aa186a4d38dbf07e1/0',
-	//             'https://gpic.qpic.cn/gbar_pic/2aqluyraXicEfqicaK3aV4iaib5icib78qF0eFxokIEKSewIg8hQW0kiavCQg/1000',
-	//             'https://gpic.qpic.cn/gbar_pic/3MSgRdnPzZAQnkIModguuoU1PXSKZUup1B67V82b3KicfhjAVwh19BRFia4DgWfxgg/1000',
-	//             'https://gpic.qpic.cn/gbar_pic/2aqluyraXicEfqicaK3aV4iazVolQTREmcvaEG92Hy9oibhyDJHNzu1s3w/1000',
-	//             'https://gpic.qpic.cn/gbar_pic/emH5YQz0vOJ2E0L6ZljlcW9nFgQzMXtpN240iaeB7PFUhZSWvvpbtLA/1000',
-	//             'https://gpic.qpic.cn/gbar_pic/hVlQlSGMCtYlKrqpM5xwdmJrbh4iaawOgY6lFT1eNWTib7qv2Z2QuJWXmchPUqBriay/1000',
-	//             'https://gpic.qpic.cn/gbar_pic/lDVAjxOVicMnyU4OWLShicffM3TvZYFia4ywL0B5oC3BLPDCoIkgdkJLA/0',
-	//             'https://gpic.qpic.cn/gbar_pic/2aqluyraXicEfqicaK3aV4ia3YQE3mKcibH02jibympJ4gzCUEjk2Iz5BwQ/1000',
-	//             'https://gpic.qpic.cn/gbar_pic/rqlh3lfegUYAvWGGNA8wyC5kly2PwLzONQsSatcxicqJOw0gz9MGmZg/1000',
-	//             'https://gpic.qpic.cn/gbar_pic/PR0vBBjLNC7PpwKQ5YmKjo9ricr8EqAZFQVzXJG96SKCr4hVoWiaT4OQ/0',
-	//         ];
-	//
-	//         return (
-	//             <div>
-	//                 <h3 className="title">Click image to open the viewer.</h3>
-	//                 <ul className="gallery">
-	//                 { imagelist.map((item, i)=>{
-	//                     return (<li key={i}><img className="pic" src={item} onClick={this.show.bind(this, imagelist, i)}/></li>)
-	//                 })}
-	//                 </ul>
-	//             </div>
-	//         )
-	//     }
-	//
-	//     show(imagelist, current){
-	//         SingleImgView.show({
-	//             imagelist,
-	//             current,
-	//             maxScale: 3,
-	//             close: ()=>{SingleImgView.hide()},
-	//             initCallback: ()=>{
-	//                 // 禁止右滑关闭webview
-	//                 // if(mqq){
-	//                 //     mqq.ui.setWebViewBehavior({
-	//                 //         swipeBack: 0
-	//                 //     });
-	//
-	//                 //     // 禁用系统的长按功能(如果没有配置长按事件则启用系统长按事件)
-	//                 //     if (mqq.compare('5.8') > -1) {
-	//                 //         mqq.invoke('ui', 'disableLongPress', {
-	//                 //             enable: true
-	//                 //         });
-	//                 //     } else if (mqq.compare('5.8') > -1) {
-	//                 //         mqq.invoke('ui', 'disableLongPress', {
-	//                 //             enable: false
-	//                 //         });
-	//                 //     }
-	//                 // }
-	//             }
-	//         })
-	//     }
-	// }
+	var ImageViewerComponent = function (_React$Component) {
+	    (0, _inherits3.default)(ImageViewerComponent, _React$Component);
 
+	    function ImageViewerComponent() {
+	        (0, _classCallCheck3.default)(this, ImageViewerComponent);
+	        return (0, _possibleConstructorReturn3.default)(this, (ImageViewerComponent.__proto__ || (0, _getPrototypeOf2.default)(ImageViewerComponent)).call(this));
+	    }
 
-	exports.default = Finger;
+	    (0, _createClass3.default)(ImageViewerComponent, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            var imagelist = ['https://p.qpic.cn/qqconadmin/0/e4a67754b2d1485aa186a4d38dbf07e1/0', 'https://gpic.qpic.cn/gbar_pic/2aqluyraXicEfqicaK3aV4iaib5icib78qF0eFxokIEKSewIg8hQW0kiavCQg/1000', 'https://gpic.qpic.cn/gbar_pic/3MSgRdnPzZAQnkIModguuoU1PXSKZUup1B67V82b3KicfhjAVwh19BRFia4DgWfxgg/1000', 'https://gpic.qpic.cn/gbar_pic/2aqluyraXicEfqicaK3aV4iazVolQTREmcvaEG92Hy9oibhyDJHNzu1s3w/1000', 'https://gpic.qpic.cn/gbar_pic/emH5YQz0vOJ2E0L6ZljlcW9nFgQzMXtpN240iaeB7PFUhZSWvvpbtLA/1000', 'https://gpic.qpic.cn/gbar_pic/hVlQlSGMCtYlKrqpM5xwdmJrbh4iaawOgY6lFT1eNWTib7qv2Z2QuJWXmchPUqBriay/1000', 'https://gpic.qpic.cn/gbar_pic/lDVAjxOVicMnyU4OWLShicffM3TvZYFia4ywL0B5oC3BLPDCoIkgdkJLA/0', 'https://gpic.qpic.cn/gbar_pic/2aqluyraXicEfqicaK3aV4ia3YQE3mKcibH02jibympJ4gzCUEjk2Iz5BwQ/1000', 'https://gpic.qpic.cn/gbar_pic/rqlh3lfegUYAvWGGNA8wyC5kly2PwLzONQsSatcxicqJOw0gz9MGmZg/1000', 'https://gpic.qpic.cn/gbar_pic/PR0vBBjLNC7PpwKQ5YmKjo9ricr8EqAZFQVzXJG96SKCr4hVoWiaT4OQ/0'];
+
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h3',
+	                    { className: 'title' },
+	                    'Click image to open the viewer.'
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'gallery' },
+	                    imagelist.map(function (item, i) {
+	                        return _react2.default.createElement(
+	                            'li',
+	                            { key: i },
+	                            _react2.default.createElement('img', { className: 'pic', src: item, onClick: _this2.show.bind(_this2, imagelist, i) })
+	                        );
+	                    })
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'show',
+	        value: function show(imagelist, current) {
+	            _ImageViewer.SingleImgView.show({
+	                imagelist: imagelist,
+	                current: current,
+	                maxScale: 3,
+	                close: function close() {
+	                    _ImageViewer.SingleImgView.hide();
+	                },
+	                initCallback: function initCallback() {
+	                    // 禁止右滑关闭webview
+	                    // if(mqq){
+	                    //     mqq.ui.setWebViewBehavior({
+	                    //         swipeBack: 0
+	                    //     });
+
+	                    //     // 禁用系统的长按功能(如果没有配置长按事件则启用系统长按事件)
+	                    //     if (mqq.compare('5.8') > -1) {
+	                    //         mqq.invoke('ui', 'disableLongPress', {
+	                    //             enable: true
+	                    //         });
+	                    //     } else if (mqq.compare('5.8') > -1) {
+	                    //         mqq.invoke('ui', 'disableLongPress', {
+	                    //             enable: false
+	                    //         });
+	                    //     }
+	                    // }
+	                }
+	            });
+	        }
+	    }]);
+	    return ImageViewerComponent;
+	}(_react2.default.Component);
+
+	exports.default = ImageViewerComponent;
 	module.exports = exports['default'];
 
 /***/ },
@@ -31961,6 +31835,541 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.SingleImgView = undefined;
+
+	var _getPrototypeOf = __webpack_require__(476);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(502);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(503);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(507);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(554);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _class, _temp; /**********************************************************************************************
+	                    *
+	                    *  @ param(array)       imagelist: The list of images to view
+	                    *  @ param(bool)        disablePinch: Disable pinch function
+	                    *  @ param(bool)        disableRotate: Disable rotate function
+	                    *  @ param(bool)        disableDoubleTap: Disable double tap function
+	                    *  @ param(function)    longTap: Events called after the long tap
+	                    *  @ param(function)    close: the function to close the viewer
+	                    *
+	                    *
+	                    **********************************************************************************************/
+
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Finger = __webpack_require__(563);
+
+	var _Finger2 = _interopRequireDefault(_Finger);
+
+	var _Transform = __webpack_require__(564);
+
+	var _Transform2 = _interopRequireDefault(_Transform);
+
+	var _ImageViewerComponent = __webpack_require__(570);
+
+	var _reactSingleton = __webpack_require__(572);
+
+	var _reactSingleton2 = _interopRequireDefault(_reactSingleton);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MARGIN = 0;
+
+	var ImageView = (_temp = _class = function (_Component) {
+	    (0, _inherits3.default)(ImageView, _Component);
+
+	    function ImageView(props) {
+	        (0, _classCallCheck3.default)(this, ImageView);
+
+	        var _this = (0, _possibleConstructorReturn3.default)(this, (ImageView.__proto__ || (0, _getPrototypeOf2.default)(ImageView)).call(this));
+
+	        _this.initScale = 1;
+	        _this.screenWidth = window.innerWidth || window.screen.availWidth;
+	        _this.screenHeight = window.innerHeight || window.screen.availHeight;
+	        _this.list = null;
+	        _this.ob = null;
+	        _this.focused = null;
+
+	        _this.arrLength = props.imagelist.length;
+	        _this.state = {
+	            current: props.current,
+	            translateX: 0,
+
+	            scaleXArr: new Array(_this.arrLength).fill(1),
+	            scaleYArr: new Array(_this.arrLength).fill(1),
+	            initScaleArr: new Array(_this.arrLength).fill(1),
+
+	            translateXArr: new Array(_this.arrLength).fill(0),
+	            translateYArr: new Array(_this.arrLength).fill(0),
+
+	            originXArr: new Array(_this.arrLength).fill(0),
+	            originYArr: new Array(_this.arrLength).fill(0)
+	        };
+	        return _this;
+	    }
+
+	    (0, _createClass3.default)(ImageView, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            var current = this.state.current,
+	                _props = this.props,
+	                imagelist = _props.imagelist,
+	                initCallback = _props.initCallback;
+
+
+	            this.arrLength = imagelist.length;
+	            this.list = this.refs['imagelist'].parentNode;
+
+	            //Transform(this.list);
+
+	            current && this.changeIndex(current, false);
+
+	            this.bindStyle(current);
+
+	            initCallback && initCallback();
+	        }
+
+	        //单击图片关闭查看器
+
+	    }, {
+	        key: 'onSingleTap',
+	        value: function onSingleTap() {
+	            this.props.close && this.props.close();
+	        }
+	    }, {
+	        key: 'onPressMove',
+	        value: function onPressMove(evt) {
+	            var current = this.state.current;
+
+
+	            this.endAnimation();
+
+	            if (!this.focused) {
+	                if (current === 0 && evt.deltaX > 0 || current === this.arrLength - 1 && evt.deltaX < 0) {
+	                    this.setState({
+	                        translateX: this.state.translateX + evt.deltaX / 3
+	                    });
+	                    //this.list.translateX += evt.deltaX / 3;
+	                } else {
+	                    this.setState({
+	                        translateX: this.state.translateX + evt.deltaX
+	                    });
+	                    //this.list.translateX += evt.deltaX;
+	                }
+	            }
+
+	            evt.preventDefault();
+	        }
+	    }, {
+	        key: 'onSwipe',
+	        value: function onSwipe(evt) {
+	            var _this2 = this;
+
+	            var direction = evt.direction;
+	            var current = this.state.current;
+
+	            if (this.focused) {
+	                return false;
+	            }
+	            switch (direction) {
+	                case 'Left':
+	                    current < this.arrLength - 1 && ++current && this.bindStyle(current);
+	                    // current < this.arrLength-1 && ++current;
+	                    break;
+	                case 'Right':
+	                    current > 0 && current-- && this.bindStyle(current);
+	                    // current > 0 && current--;
+	                    break;
+	            }
+	            this.setState({
+	                current: current
+	            }, function () {
+	                return _this2.changeIndex(current);
+	            });
+	        }
+	    }, {
+	        key: 'onPicPressMove',
+	        value: function onPicPressMove(evt) {
+	            var deltaX = evt.deltaX,
+	                deltaY = evt.deltaY,
+	                isLongPic = this.ob.getAttribute('long'),
+	                _ob = this.ob,
+	                scaleX = _ob.scaleX,
+	                width = _ob.width;
+
+
+	            if (this.ob.scaleX <= 1 || evt.touches.length > 1) {
+	                return;
+	            }
+
+	            if (this.ob && this.checkBoundary(deltaX, deltaY)) {
+	                !isLongPic && (this.ob.translateX += deltaX);
+	                this.ob.translateY += deltaY;
+
+	                if (isLongPic && scaleX * width === this.screenWidth) {
+	                    this.focused = false;
+	                } else {
+	                    this.focused = true;
+	                }
+	            } else {
+	                this.focused = false;
+	            }
+	        }
+	    }, {
+	        key: 'onMultipointStart',
+	        value: function onMultipointStart() {
+	            this.state.initScale = this.state.scaleX;
+	        }
+	    }, {
+	        key: 'onPinch',
+	        value: function onPinch(evt) {
+	            if (this.props.disablePinch || this.ob.getAttribute('long')) {
+	                return false;
+	            }
+	            this.ob.style.webkitTransition = 'cubic-bezier(.25,.01,.25,1)';
+
+	            var _ob2 = this.ob,
+	                originX = _ob2.originX,
+	                originY = _ob2.originY,
+	                originX2 = evt.center.x - this.screenWidth / 2 - document.body.scrollLeft,
+	                originY2 = evt.center.y - this.screenHeight / 2 - document.body.scrollTop;
+
+
+	            this.ob.originX = originX2;
+	            this.ob.originY = originY2;
+	            this.ob.translateX = this.ob.translateX + (originX2 - originX) * this.ob.scaleX;
+	            this.ob.translateY = this.ob.translateY + (originY2 - originY) * this.ob.scaleY;
+
+	            this.setState({
+	                scaleX: this.state.initScale * evt.scale,
+	                scaleY: this.state.scaleX
+	            });
+
+	            // const { originX, originY } = this.ob,
+	            //     originX2 = evt.center.x - this.screenWidth/2 - document.body.scrollLeft,
+	            //     originY2 = evt.center.y - this.screenHeight/2 - document.body.scrollTop;
+	            //
+	            // this.ob.originX = originX2;
+	            // this.ob.originY = originY2;
+	            // this.ob.translateX = this.ob.translateX + (originX2 - originX) * this.ob.scaleX;
+	            // this.ob.translateY = this.ob.translateY + (originY2 - originY) * this.ob.scaleY;
+	            //
+	            // this.ob.scaleX = this.ob.scaleY = this.initScale * evt.scale;
+	        }
+	    }, {
+	        key: 'onRotate',
+	        value: function onRotate(evt) {
+	            if (!this.props.enableRotate || this.ob.getAttribute('rate') >= 3.5) {
+	                return false;
+	            }
+
+	            this.ob.style.webkitTransition = 'cubic-bezier(.25,.01,.25,1)';
+
+	            this.ob.rotateZ += evt.angle;
+	        }
+	    }, {
+	        key: 'onLongTap',
+	        value: function onLongTap() {
+	            this.props.longTap && this.props.longTap();
+	        }
+	    }, {
+	        key: 'onMultipointEnd',
+	        value: function onMultipointEnd(evt) {
+	            // translate to normal
+	            this.changeIndex(this.state.current);
+
+	            if (!this.ob) {
+	                return;
+	            }
+
+	            this.ob.style.webkitTransition = '300ms ease';
+
+	            var maxScale = this.props.maxScale,
+	                isLongPic = this.ob.getAttribute('long');
+	            // scale to normal
+	            if (this.ob.scaleX < 1) {
+	                this.restore(false);
+	            }
+	            if (this.ob.scaleX > maxScale && !isLongPic) {
+	                this.setScale(maxScale);
+	            }
+
+	            // rotate to normal
+	            var rotation = this.ob.rotateZ % 360,
+	                rate = this.ob.getAttribute('rate');
+
+	            if (rotation < 0) {
+	                rotation = 360 + rotation;
+	            }
+	            this.ob.rotateZ = rotation;
+
+	            if (rotation > 0 && rotation < 45) {
+	                this.ob.rotateZ = 0;
+	            } else if (rotation >= 315) {
+	                this.ob.rotateZ = 360;
+	            } else if (rotation >= 45 && rotation < 135) {
+	                this.ob.rotateZ = 90;
+	                this.setScale(rate);
+	            } else if (rotation >= 135 && rotation < 225) {
+	                this.ob.rotateZ = 180;
+	            } else if (rotation >= 225 && rotation < 315) {
+	                this.ob.rotateZ = 270;
+	                this.setScale(rate);
+	            }
+	        }
+	    }, {
+	        key: 'onDoubleTap',
+	        value: function onDoubleTap(evt) {
+	            if (this.props.disableDoubleTap) {
+	                return false;
+	            }
+
+	            var origin = evt.origin,
+	                originX = origin[0] - this.screenWidth / 2 - document.body.scrollLeft,
+	                originY = origin[1] - this.screenHeight / 2 - document.body.scrollTop,
+	                isLongPic = this.ob.getAttribute('long');
+
+
+	            if (this.state.scaleXArr[this.state.current] === 1) {
+	                var translateXArr = this.state.translateXArr;
+	                translateXArr[this.state.current] = originX;
+	                var translateYArr = this.state.translateYArr;
+	                translateYArr[this.state.current] = originY;
+	                var originXArr = this.state.originXArr;
+	                originXArr[this.state.current] = originX;
+	                var originYArr = this.state.originYArr;
+	                originYArr[this.state.current] = originY;
+
+	                !isLongPic && this.setState({
+	                    translateXArr: translateXArr,
+	                    translateYArr: translateYArr,
+	                    originXArr: originXArr,
+	                    originYArr: originYArr
+	                });
+	                this.setScale(isLongPic ? this.screenWidth / this.ob.width : this.props.maxScale);
+	            } else {
+	                var translateXArr = this.state.translateXArr;
+	                translateXArr[this.state.current] = this.state.originXArr[this.state.current];
+	                var translateYArr = this.state.translateYArr;
+	                translateYArr[this.state.current] = this.state.originYArr[this.state.current];
+
+	                this.setState({
+	                    translateXArr: translateXArr,
+	                    translateYArr: translateYArr
+	                });
+	                this.setScale(1);
+	            }
+	        }
+	    }, {
+	        key: 'bindStyle',
+	        value: function bindStyle(current) {
+	            var _this3 = this;
+
+	            this.setState({ current: current }, function () {
+	                _this3.ob && _this3.restore();
+	                _this3.ob = document.getElementById('view' + current).parentNode;
+	                // if(this.ob && !this.ob.scaleX){
+	                //     //Transform(this.ob)
+	                //     this.setState({
+	                //       translateX: -this.screenWidth * current
+	                //     })
+	                // }
+	                // ease hide page number
+	                var page = _this3.refs.page;
+	                if (page) {
+	                    page.classList.remove('hide');
+	                    setTimeout(function () {
+	                        page.classList.add('hide');
+	                    }, 2000);
+	                }
+	            });
+	        }
+
+	        //查看器转到第current张图片
+
+	    }, {
+	        key: 'changeIndex',
+	        value: function changeIndex(current) {
+	            var ease = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+	            ease && (this.list.style.webkitTransition = '300ms ease');
+	            this.setState({
+	                translateX: -current * (this.screenWidth + this.props.gap)
+	            });
+
+	            //调用changeIndex的回调函数
+	            this.props.changeIndex && this.props.changeIndex(current);
+	        }
+	    }, {
+	        key: 'setScale',
+	        value: function setScale(size) {
+	            this.ob.style.webkitTransition = '300ms ease-in-out';
+	            this.state.scaleXArr[this.state.current] = size;
+	            this.state.scaleYArr[this.state.current] = size;
+	            this.setState({
+	                scaleXArr: this.state.scaleXArr,
+	                scaleYArr: this.state.scaleYArr
+	            });
+	        }
+	    }, {
+	        key: 'restore',
+	        value: function restore() {
+	            var rotate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+	            this.ob.translateX = this.ob.translateY = 0;
+	            !!rotate && (this.ob.rotateZ = 0);
+	            this.ob.scaleX = this.ob.scaleY = 1;
+	            this.ob.originX = this.ob.originY = 0;
+	        }
+
+	        //移除动画效果,但好像没效果，浏览器的是transition
+
+	    }, {
+	        key: 'endAnimation',
+	        value: function endAnimation() {
+	            this.list.style.webkitTransition = '0';
+	            this.ob && this.ob.style && (this.ob.style.webkitTransition = '0');
+	        }
+	    }, {
+	        key: 'checkBoundary',
+	        value: function checkBoundary() {
+	            var deltaX = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+	            var deltaY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+	            var _ob3 = this.ob,
+	                scaleX = _ob3.scaleX,
+	                translateX = _ob3.translateX,
+	                translateY = _ob3.translateY,
+	                originX = _ob3.originX,
+	                originY = _ob3.originY,
+	                width = _ob3.width,
+	                height = _ob3.height,
+	                rate = this.ob.getAttribute('rate');
+
+
+	            if (scaleX !== 1 || scaleX !== rate) {
+	                // include long picture
+	                var rangeLeft = (scaleX - 1) * (width / 2 + originX) + originX,
+	                    rangeRight = -(scaleX - 1) * (width / 2 - originX) + originX,
+	                    rangeUp = (scaleX - 1) * (height / 2 + originY) + originY,
+	                    rangeDown = -(scaleX - 1) * (height / 2 - originY) + originY;
+
+	                if (translateX + deltaX <= rangeLeft && translateX + deltaX >= rangeRight && translateY + deltaY <= rangeUp && translateY + deltaY >= rangeDown) {
+	                    return true;
+	                }
+	            }
+	            return false;
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            var _this4 = this;
+
+	            var _props2 = this.props,
+	                desc = _props2.desc,
+	                disablePageNum = _props2.disablePageNum,
+	                children = _props2.children,
+	                gap = _props2.gap;
+
+
+	            return _react2.default.createElement(
+	                _Finger2.default,
+	                {
+	                    onSingleTap: this.onSingleTap.bind(this),
+	                    onPressMove: this.onPressMove.bind(this),
+	                    onSwipe: this.onSwipe.bind(this)
+	                },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'imageview' },
+	                    _react2.default.createElement(
+	                        _Transform2.default,
+	                        { translateX: this.state.translateX },
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { ref: 'imagelist', className: 'imagelist' },
+	                            this.props.imagelist.map(function (item, i) {
+	                                return _react2.default.createElement(
+	                                    'li',
+	                                    { className: 'imagelist-item', style: { marginRight: gap + 'px' }, key: "img" + i },
+	                                    _react2.default.createElement(
+	                                        _Finger2.default,
+	                                        {
+	                                            onDoubleTap: _this4.onDoubleTap.bind(_this4)
+	                                        },
+	                                        _react2.default.createElement(
+	                                            _Transform2.default,
+	                                            { scaleX: _this4.state.scaleXArr[i], scaleY: _this4.state.scaleYArr[i], translateX: _this4.state.translateXArr[i], translateY: _this4.state.translateYArr[i], originX: _this4.state.originXArr[i], originY: _this4.state.originYArr[i] },
+	                                            _react2.default.createElement(_ImageViewerComponent.CenterImage, { id: 'view' + i, className: 'imagelist-item-img', lazysrc: item, index: i, current: _this4.state.current })
+	                                        )
+	                                    )
+	                                );
+	                            })
+	                        )
+	                    ),
+	                    disablePageNum ? null : _react2.default.createElement(
+	                        'div',
+	                        { className: 'page', ref: 'page' },
+	                        this.state.current + 1,
+	                        ' / ',
+	                        this.arrLength
+	                    ),
+	                    desc ? _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: desc } }) : null,
+	                    children
+	                )
+	            );
+	        }
+	    }]);
+	    return ImageView;
+	}(_react.Component), _class.defaultProps = {
+	    gap: MARGIN,
+	    current: 0,
+	    disablePageNum: false,
+	    desc: '',
+	    maxScale: 2
+	}, _class.propTypes = {
+	    gap: _react2.default.PropTypes.number,
+	    maxScale: _react2.default.PropTypes.number,
+	    current: _react2.default.PropTypes.number,
+	    imagelist: _react2.default.PropTypes.array.isRequired,
+	    disablePageNum: _react2.default.PropTypes.bool,
+	    disablePinch: _react2.default.PropTypes.bool,
+	    enableRotate: _react2.default.PropTypes.bool,
+	    disableDoubleTap: _react2.default.PropTypes.bool,
+	    longTap: _react2.default.PropTypes.func,
+	    close: _react2.default.PropTypes.func.isRequired,
+	    changeIndex: _react2.default.PropTypes.func,
+	    initCallback: _react2.default.PropTypes.func
+	}, _temp);
+	var SingleImgView = exports.SingleImgView = new _reactSingleton2.default(ImageView);
+
+	exports.default = ImageView;
+
+/***/ },
+/* 563 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	exports.default = undefined;
 
 	var _getPrototypeOf = __webpack_require__(476);
@@ -32004,8 +32413,11 @@
 	        _this.delta = null; //最近两次触发touchstart事件的时间间隔
 	        _this.last = null; //上次触发touchstart事件时的毫秒数
 	        _this.now = null; //当前触发touchstart事件时的毫秒数
+	        _this.end = null;
+	        _this.multiTouch = false;
 	        _this.tapTimeout = null; //保存了setTimeout的返回值，当最后不是tap事件时，用于清除tap的定时器
 	        _this.longTapTimeout = null; //保存了setTimeout的返回值，当最后不是longTap事件时，用于清除longTap的定时器
+	        _this.singleTapTimeout = null; // 与tap事件的区别是tap是立即执行的，singleTap是跟doubleTap一起的，会延迟一点时间再执行，以判断是哪个事件
 	        _this.swipeTimeout = null; //保存了setTimeout的返回值，当最后不是swipe事件时，用于清除swipe的定时器
 	        //x1,y1是当前触发touchstart事件时，pageX和pageY的位置，x2，y2记录上一次手指的位置
 	        _this.x1 = _this.x2 = _this.y1 = _this.y2 = null;
@@ -32078,9 +32490,15 @@
 
 	    }, {
 	        key: '_emitEvent',
-	        value: function _emitEvent(name, e) {
+	        value: function _emitEvent(name) {
 	            if (this.props[name]) {
-	                this.props[name](e);
+	                var _props;
+
+	                for (var _len = arguments.length, arg = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+	                    arg[_key - 1] = arguments[_key];
+	                }
+
+	                (_props = this.props)[name].apply(_props, arg);
 	            }
 	        }
 	    }, {
@@ -32088,6 +32506,8 @@
 	        value: function _handleTouchStart(evt) {
 
 	            evt.persist();
+	            if (!evt.touches) return;
+
 	            evt.preventDefault(); //是否应该在一开始就阻止浏览器默认事件呢
 
 	            this.now = Date.now();
@@ -32103,6 +32523,8 @@
 	            var preV = this.preV,
 	                len = evt.touches.length;
 	            if (len > 1) {
+	                this._cancelLongTap();
+	                this._cancelSingleTap();
 	                var v = { x: evt.touches[1].pageX - this.x1, y: evt.touches[1].pageY - this.y1 };
 	                preV.x = v.x;
 	                preV.y = v.y;
@@ -32128,6 +32550,10 @@
 
 	                if (preV.x !== null) {
 	                    if (this.pinchStartLen > 0) {
+	                        evt.center = {
+	                            x: (evt.touches[1].pageX + currentX) / 2,
+	                            y: (evt.touches[1].pageY + currentY) / 2
+	                        };
 	                        evt.scale = this.getLen(v) / this.pinchStartLen;
 	                        this._emitEvent('onPinch', evt);
 	                    }
@@ -32137,6 +32563,7 @@
 	                }
 	                preV.x = v.x;
 	                preV.y = v.y;
+	                this.multiTouch = true;
 	            } else {
 	                if (this.x2 !== null) {
 	                    evt.deltaX = currentX - this.x2;
@@ -32161,6 +32588,7 @@
 	    }, {
 	        key: '_handleTouchCancel',
 	        value: function _handleTouchCancel() {
+	            clearInterval(this.singleTapTimeout);
 	            clearInterval(this.tapTimeout);
 	            clearInterval(this.longTapTimeout);
 	            clearInterval(this.swipeTimeout);
@@ -32168,25 +32596,38 @@
 	    }, {
 	        key: '_handleTouchEnd',
 	        value: function _handleTouchEnd(evt) {
+	            var _this2 = this;
+
+	            evt.persist();
+	            this.end = Date.now();
 	            this._cancelLongTap();
-	            var self = this;
+
 	            if (evt.touches.length < 2) {
 	                this._emitEvent('onMultipointEnd', evt);
 	            }
 
-	            if (this.x2 && Math.abs(this.x1 - this.x2) > 30 || this.y2 && Math.abs(this.preV.y - this.y2) > 30) {
-	                evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
-	                this.swipeTimeout = setTimeout(function () {
-	                    self._emitEvent('onSwipe', evt);
-	                }, 0);
-	            } else {
-	                this.tapTimeout = setTimeout(function () {
-	                    self._emitEvent('onTap', evt);
-	                    if (self.isDoubleTap) {
-	                        self._emitEvent('onDoubleTap', evt);
-	                        self.isDoubleTap = false;
-	                    }
-	                }, 0);
+	            evt.origin = [this.x1, this.y1];
+	            if (this.multiTouch === false) {
+	                if (this.x2 && Math.abs(this.x1 - this.x2) > 30 || this.y2 && Math.abs(this.preV.y - this.y2) > 30) {
+	                    evt.direction = this._swipeDirection(this.x1, this.x2, this.y1, this.y2);
+	                    evt.distance = Math.abs(this.x1 - this.x2);
+	                    this.swipeTimeout = setTimeout(function () {
+	                        _this2._emitEvent('onSwipe', evt);
+	                    }, 0);
+	                } else {
+	                    this.tapTimeout = setTimeout(function () {
+	                        _this2._emitEvent('onTap', evt);
+	                        if (_this2.isDoubleTap) {
+	                            _this2._emitEvent('onDoubleTap', evt);
+	                            clearTimeout(_this2.singleTapTimeout);
+	                            _this2.isDoubleTap = false;
+	                        } else {
+	                            _this2.singleTapTimeout = setTimeout(function () {
+	                                _this2._emitEvent('onSingleTap', evt);
+	                            }, 250);
+	                        }
+	                    }, 0);
+	                }
 	            }
 
 	            this.preV.x = 0;
@@ -32194,6 +32635,7 @@
 	            this.scale = 1;
 	            this.pinchStartLen = null;
 	            this.x1 = this.x2 = this.y1 = this.y2 = null;
+	            this.multiTouch = false;
 	        }
 
 	        //取消绑定的长按事件
@@ -32203,13 +32645,21 @@
 	        value: function _cancelLongTap() {
 	            clearTimeout(this.longTapTimeout);
 	        }
-
+	    }, {
+	        key: '_cancelSingleTap',
+	        value: function _cancelSingleTap() {
+	            clearTimeout(this.singleTapTimeout);
+	        }
 	        //滑动方向
 
 	    }, {
 	        key: '_swipeDirection',
 	        value: function _swipeDirection(x1, x2, y1, y2) {
-	            return Math.abs(x1 - x2) >= Math.abs(y1 - y2) ? x1 - x2 > 0 ? 'Left' : 'Right' : y1 - y2 > 0 ? 'Up' : 'Down';
+	            if (Math.abs(x1 - x2) > 80 || this.end - this.now < 250) {
+	                return Math.abs(x1 - x2) >= Math.abs(y1 - y2) ? x1 - x2 > 0 ? 'Left' : 'Right' : y1 - y2 > 0 ? 'Up' : 'Down';
+	            } else {
+	                return 'Nochange';
+	            }
 	        }
 	    }, {
 	        key: 'render',
@@ -32238,6 +32688,7 @@
 	//             onRotate={this.onRotate.bind(this)}
 	//             onPressMove={this.onPressMove.bind(this)}
 	//             onMultipointEnd={this.onMultipointEnd.bind(this)}
+	//             onSingleTap={this.onSingleTap.bind(this)}
 	//             onDoubleTap={this.onDoubleTap.bind(this)}>
 	//             <div className="test">the element that you want to bind event</div>
 	//         </Finger>
@@ -32249,7 +32700,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 563 */
+/* 564 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32259,7 +32710,7 @@
 	});
 	exports.default = undefined;
 
-	var _extends2 = __webpack_require__(564);
+	var _extends2 = __webpack_require__(565);
 
 	var _extends3 = _interopRequireDefault(_extends2);
 
@@ -32617,14 +33068,14 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 564 */
+/* 565 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _assign = __webpack_require__(565);
+	var _assign = __webpack_require__(566);
 
 	var _assign2 = _interopRequireDefault(_assign);
 
@@ -32645,29 +33096,29 @@
 	};
 
 /***/ },
-/* 565 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(566), __esModule: true };
-
-/***/ },
 /* 566 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(567);
-	module.exports = __webpack_require__(489).Object.assign;
+	module.exports = { "default": __webpack_require__(567), __esModule: true };
 
 /***/ },
 /* 567 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(488);
-
-	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(568)});
+	__webpack_require__(568);
+	module.exports = __webpack_require__(489).Object.assign;
 
 /***/ },
 /* 568 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(488);
+
+	$export($export.S + $export.F, 'Object', {assign: __webpack_require__(569)});
+
+/***/ },
+/* 569 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32703,6 +33154,293 @@
 	    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
 	  } return T;
 	} : $assign;
+
+/***/ },
+/* 570 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.CenterImage = undefined;
+
+	var _extends2 = __webpack_require__(565);
+
+	var _extends3 = _interopRequireDefault(_extends2);
+
+	var _objectWithoutProperties2 = __webpack_require__(571);
+
+	var _objectWithoutProperties3 = _interopRequireDefault(_objectWithoutProperties2);
+
+	var _getPrototypeOf = __webpack_require__(476);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(502);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(503);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(507);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(554);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var PRELOADNUM = 3;
+
+	var CenterImage = exports.CenterImage = function (_Component) {
+	    (0, _inherits3.default)(CenterImage, _Component);
+
+	    function CenterImage() {
+	        var _ref;
+
+	        var _temp, _this, _ret;
+
+	        (0, _classCallCheck3.default)(this, CenterImage);
+
+	        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	            args[_key] = arguments[_key];
+	        }
+
+	        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = CenterImage.__proto__ || (0, _getPrototypeOf2.default)(CenterImage)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	            loading: true,
+	            error: false,
+	            loaded: false
+	        }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
+	    }
+
+	    (0, _createClass3.default)(CenterImage, [{
+	        key: 'render',
+	        value: function render() {
+	            var _state = this.state,
+	                loading = _state.loading,
+	                error = _state.error,
+	                _props = this.props,
+	                index = _props.index,
+	                current = _props.current,
+	                lazysrc = _props.lazysrc,
+	                childProps = (0, _objectWithoutProperties3.default)(_props, ['index', 'current', 'lazysrc']),
+	                img = _react2.default.createElement('img', (0, _extends3.default)({ onLoad: this.onImgLoad.bind(this), src: lazysrc }, childProps));
+
+	            // init first image, others have been preloaded
+
+
+	            if (index === current) {
+	                return img;
+	            }
+	            if (loading) {
+	                return _react2.default.createElement(Loading, null);
+	            }
+	            if (error) {
+	                return _react2.default.createElement(Error, null);
+	            }
+
+	            return img;
+	        }
+	    }, {
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            this.loadImg();
+	        }
+	    }, {
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            !this.state.loaded && this.loadImg();
+	        }
+	    }, {
+	        key: 'loadImg',
+	        value: function loadImg() {
+	            var _this2 = this;
+
+	            var _props2 = this.props,
+	                index = _props2.index,
+	                current = _props2.current,
+	                lazysrc = _props2.lazysrc;
+
+
+	            if (lazysrc && index <= current + PRELOADNUM && index >= current - PRELOADNUM) {
+	                var img = new Image();
+
+	                img.src = lazysrc;
+	                img.onload = function () {
+	                    _this2.setState({
+	                        loading: false
+	                    });
+	                };
+	                img.onerror = function () {
+	                    _this2.setState({
+	                        loading: false,
+	                        error: true
+	                    });
+	                };
+	            }
+	        }
+	    }, {
+	        key: 'onImgLoad',
+	        value: function onImgLoad(e) {
+
+	            this.setState({ loaded: true });
+
+	            var target = e.target,
+	                h = target.naturalHeight,
+	                //真实图片高度
+	            w = target.naturalWidth,
+	                //真实图片宽度
+	            r = h / w,
+	                height = window.innerHeight || window.screen.availHeight,
+	                width = window.innerWidth || window.screen.availWidth,
+	                rate = height / width;
+
+	            var imgStyle = {};
+
+	            if (r >= 3.5) {
+	                // imgStyle.width = width + "px";
+	                // imgStyle.height = h * width / w + "px";
+	                target.setAttribute('long', true);
+	            }
+
+	            if (r > rate) {
+	                imgStyle.height = height + "px";
+	                imgStyle.width = w * height / h + "px";
+	                imgStyle.left = width / 2 - w * height / h / 2 + "px";
+	            } else if (r < rate) {
+	                imgStyle.width = width + "px";
+	                imgStyle.height = h * width / w + "px";
+	                imgStyle.top = height / 2 - h * width / w / 2 + "px";
+	            } else {
+	                imgStyle.width = width;
+	                imgStyle.height = height;
+	            }
+
+	            target.setAttribute('style', 'width:' + imgStyle.width + '; height:' + imgStyle.height + '; left:' + imgStyle.left + '; top:' + imgStyle.top + ';');
+	            target.setAttribute('rate', 1 / r);
+	            target.parentNode.setAttribute('style', 'width:' + imgStyle.width + '; height:' + imgStyle.height + '; padding-left:' + imgStyle.left + '; padding-top:' + imgStyle.top + ';');
+	            target.parentNode.setAttribute('rate', 1 / r);
+	        }
+	    }]);
+	    return CenterImage;
+	}(_react.Component);
+
+	var Loading = function Loading() {
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'spinner' },
+	        _react2.default.createElement('div', { className: 'double-bounce1' }),
+	        _react2.default.createElement('div', { className: 'double-bounce2' })
+	    );
+	};
+
+	var Error = function Error() {
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'errorpage' },
+	        '\u52A0\u8F7D\u5931\u8D25'
+	    );
+	};
+
+/***/ },
+/* 571 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	exports.default = function (obj, keys) {
+	  var target = {};
+
+	  for (var i in obj) {
+	    if (keys.indexOf(i) >= 0) continue;
+	    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+	    target[i] = obj[i];
+	  }
+
+	  return target;
+	};
+
+/***/ },
+/* 572 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = undefined;
+
+	var _classCallCheck2 = __webpack_require__(502);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(503);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _react = __webpack_require__(299);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(329);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Singleton = function () {
+	  function Singleton(component) {
+	    (0, _classCallCheck3.default)(this, Singleton);
+
+	    this.dom = null;
+	    this.component = component;
+	    this.instance = null;
+	  }
+
+	  (0, _createClass3.default)(Singleton, [{
+	    key: 'show',
+	    value: function show(option) {
+	      if (!this.dom) {
+	        this.dom = document.createElement('div');
+	        document.body.appendChild(this.dom);
+	      }
+	      this.instance = (0, _reactDom.render)(_react2.default.createElement(this.component, option), this.dom);
+	      this.instance.setState({
+	        show: true
+	      });
+	    }
+	  }, {
+	    key: 'hide',
+	    value: function hide() {
+	      var _this = this;
+
+	      if (this.instance) {
+	        this.instance.setState({
+	          show: false
+	        }, function () {
+	          setTimeout(function () {
+	            (0, _reactDom.unmountComponentAtNode)(_this.dom);
+	          }, 100);
+	        });
+	      }
+	    }
+	  }]);
+	  return Singleton;
+	}();
+
+	exports.default = Singleton;
+	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);
